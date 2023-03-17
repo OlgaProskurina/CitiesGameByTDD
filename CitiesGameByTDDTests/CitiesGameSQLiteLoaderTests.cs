@@ -6,10 +6,10 @@ namespace CitiesGameByTDD.Tests
     public class CitiesGameSQLiteLoaderTests
     {
         [TestMethod()]
-        public void GetCitiesFormBDEmptyListTest()
+        public void GetCitiesFormBDTest()
         {
             var loader = new CitiesGameSQLiteLoader();            
-            Assert.AreEqual(0, loader.GetCitiesFormBD().Count);
+            Assert.AreNotEqual(0, loader.GetCitiesFormBD().Count);
         }
     }
 }
