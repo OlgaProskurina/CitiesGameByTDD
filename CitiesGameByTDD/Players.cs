@@ -14,6 +14,11 @@
             }            
         }
 
-        
+        // TODO: дореализовать
+        public int NextPlayer()
+        {
+            return 2;
+        }
+
     }
 }
