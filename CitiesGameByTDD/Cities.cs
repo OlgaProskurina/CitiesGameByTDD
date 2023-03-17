@@ -14,10 +14,15 @@
         private List<City> _cities = new List<City>();
         private Dictionary<char, int> _letterCounters = new Dictionary<char, int>();
         public IReadOnlyDictionary<char, int> LetterCounters => _letterCounters;
+        public char CurrentLetter { get; private set; } = char.MinValue;
 
-        // TODO: реализовать метод проверки города
+        // TODO: дореализвать для случаев FoundUsed и FoundUnused
         public CheckCityResult CheckCity(string cityName)
         {
+            if (cityName[0] != CurrentLetter) 
+            {
+                return CheckCityResult.WrongFirstLetter;
+            }
             return CheckCityResult.NotFound;
         }
 

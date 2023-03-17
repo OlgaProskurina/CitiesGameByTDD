@@ -36,10 +36,18 @@ namespace CitiesGameByTDD.Tests
         }
 
         [TestMethod()]
-        public void CheckCityTest()
+        public void CheckCityNotFoundTest()
         {
             _cities.LoadCities();
             Assert.AreEqual(CheckCityResult.NotFound, 
+                _cities.CheckCity("\0такого города нет"));
+        }
+
+        [TestMethod()]
+        public void CheckCityWrongFirstLetterTest() 
+        {
+            _cities.LoadCities();
+            Assert.AreEqual(CheckCityResult.NotFound,
                 _cities.CheckCity("такого города нет"));
         }
     }
