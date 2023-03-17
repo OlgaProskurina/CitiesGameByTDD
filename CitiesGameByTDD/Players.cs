@@ -34,7 +34,7 @@
 
         public void ExpelCurrentPlayer()
         {
-            _playersList.Remove(_currentPalyerIndex);
+            _playersList.RemoveAt(_currentPalyerIndex);
         }
     }
 }
