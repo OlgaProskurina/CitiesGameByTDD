@@ -16,13 +16,16 @@
         public IReadOnlyDictionary<char, int> LetterCounters => _letterCounters;
         public char CurrentLetter { get; private set; } = char.MinValue;
 
-        // TODO: дореализовать метод
+        // Город будет считаться названным
         public void AcceptCity(string cityName)
         {
-            _letterCounters[cityName[0]]--;
+            var cityNameLow = cityName.Trim().ToLowerInvariant();
+            _letterCounters[cityNameLow[0]]--;
+            var city = _cities.Find(city => city.Name == cityNameLow);
+            city.IsUsed = true;
         }
 
-        // TODO: дореализовать для FoundUsed
+        
         public CheckCityResult CheckCity(string cityName)
         {
             var cityNameLow = cityName.Trim().ToLowerInvariant();
@@ -33,10 +36,14 @@
             var city = _cities.Find(city => city.Name == cityNameLow);
             if (city != null)
             {
-                if (!city.IsUsed)
+                if (city.IsUsed)
+                {
+                    return CheckCityResult.FoundUsed;
+                }
+                else
                 {
                     return CheckCityResult.FoundUnused;
-                }                
+                }
             }       
             return CheckCityResult.NotFound;
         }
