@@ -38,7 +38,27 @@ namespace CitiesGameByTDD
 
         private void buttonEnterCity_Click(object sender, EventArgs e)
         {
-
+            switch (_cities.CheckCity(textBoxCity.Text))
+            {
+                case CheckCityResult.NotFound:
+                    labelMessage.Text = "Такого города нет!";
+                    break;
+                case CheckCityResult.FoundUsed:
+                    labelMessage.Text = "Ответ принят!";
+                    richTextBoxUsedCities.Text += textBoxCity + Environment.NewLine;
+                    _cities.AcceptCity(textBoxCity.Text);
+                    _cities.SetCurrentLetter(textBoxCity.Text);
+                    _players.NextPlayer();
+                    GameMove();                    
+                    break;
+                case CheckCityResult.FoundUnused:
+                    labelMessage.Text = "Такой город уже был назван!";
+                    break;
+                case CheckCityResult.WrongFirstLetter:
+                    labelMessage.Text = $"Название города должно начинаться на букву {_cities.CurrentLetter}";
+                    break;
+                default: break;
+            }
         }
 
         private void timerMove_Tick(object sender, EventArgs e)
