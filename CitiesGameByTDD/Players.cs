@@ -6,8 +6,11 @@
         public IReadOnlyList<int> PlayersList => _playersList;
         private int _currentPalyerIndex = 0;
 
+
         public void SetPlayers(int playersCount)
         {
+            _playersList.Clear();
+            _currentPalyerIndex = 0;
             for (int i = 1; i < playersCount + 1; i++)
             {
                 _playersList.Add(i);
