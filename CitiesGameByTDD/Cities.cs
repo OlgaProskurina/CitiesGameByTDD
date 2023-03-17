@@ -79,7 +79,7 @@
                 if (letterIndex < 0) // на любую букву cityName не осталось городов
                 {
                     CurrentLetter = char.MaxValue;
-                    break;
+                    return;
                 }
             }
             CurrentLetter = cityName[letterIndex];
