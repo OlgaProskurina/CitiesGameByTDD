@@ -28,5 +28,13 @@ namespace CitiesGameByTDD.Tests
             _players.SetPlayers(4);
             Assert.AreEqual(2, _players.NextPlayer());
         }
+
+        [TestMethod()]
+        public void ExpelCurrentPlayerTest()
+        {
+            _players.SetPlayers(5);
+            _players.ExpelCurrentPlayer();
+            Assert.AreEqual(4, _players.PlayersList.Count);
+        }
     }
 }

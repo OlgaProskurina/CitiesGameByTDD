@@ -4,7 +4,7 @@
     {
         private List<int> _playersList = new List<int>();
         public IReadOnlyList<int> PlayersList => _playersList;
-
+        private int _currentPalyerIndex = 0;
 
         public void SetPlayers(int playersCount)
         {
@@ -20,5 +20,9 @@
             return 2;
         }
 
+        public void ExpelCurrentPlayer()
+        {
+            _playersList.Remove(_currentPalyerIndex);
+        }
     }
 }
