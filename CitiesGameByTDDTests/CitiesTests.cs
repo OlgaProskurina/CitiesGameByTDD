@@ -47,7 +47,7 @@ namespace CitiesGameByTDD.Tests
         public void CheckCityWrongFirstLetterTest() 
         {
             _cities.LoadCities();
-            Assert.AreEqual(CheckCityResult.NotFound,
+            Assert.AreEqual(CheckCityResult.WrongFirstLetter,
                 _cities.CheckCity("такого города нет"));
         }
 
@@ -60,7 +60,7 @@ namespace CitiesGameByTDD.Tests
 
             _cities.SetCurrentLetter("астана");
             
-            Assert.AreEqual('a', _cities.CurrentLetter);
+            Assert.AreEqual('а', _cities.CurrentLetter);
         }
 
         [TestMethod()]
