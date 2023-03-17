@@ -54,7 +54,7 @@ namespace CitiesGameByTDD.Tests
         [TestMethod()]
         public void SetCurrentLetterTest()
         {
-            _cities.LoadCities();
+            _cities.LoadCities();        
             _cities.SetCurrentLetter("астана");
             Assert.AreEqual('a', _cities.CurrentLetter);
         }

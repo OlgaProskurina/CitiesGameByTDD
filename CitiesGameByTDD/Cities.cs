@@ -36,12 +36,22 @@
             }
         }
 
-        // TODO: реализовать заполнение значений словаря
+        // Возврат: false ключи словаря не заполнены
         public bool FillLetterCountersValues()
         {
-           if (_letterCounters.Count == 0)
-                return false;
-           return true;
+            if (_letterCounters.Count == 0)
+                return false;        
+
+            foreach (char letter in _letterCounters.Keys)
+                _letterCounters[letter] = 0;
+            foreach (var city in _cities)
+            {
+                if (!city.IsUsed)
+                {
+                    _letterCounters[city.Name[0]]++;
+                }
+            }
+            return true;
         }
 
         //TODO: дореализовать повторную загрузку городов
