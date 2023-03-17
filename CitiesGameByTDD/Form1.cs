@@ -16,6 +16,7 @@ namespace CitiesGameByTDD
             _cities.FillLetterCountersKeys();
             _cities.FillLetterCountersValues();
             InitializeComponent();
+            GameMove();
         }
 
         private void GameMove()
