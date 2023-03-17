@@ -5,7 +5,7 @@
         private List<int> _playersList = new List<int>();
         public IReadOnlyList<int> PlayersList => _playersList;
         private int _currentPalyerIndex = 0;
-
+        public int CurrentPlayer { get; private set; } 
 
         public void SetPlayers(int playersCount)
         {
@@ -14,7 +14,8 @@
             for (int i = 1; i < playersCount + 1; i++)
             {
                 _playersList.Add(i);
-            }            
+            }
+            CurrentPlayer = _playersList[0];
         }
 
         // Возврат: номер следующего игрока
