@@ -76,6 +76,13 @@ namespace CitiesGameByTDD.Tests
         }
 
 
+        [TestMethod()]
+        public void CheckCityFoundUnusedTest()
+        {
+            _cities.LoadCities();
+
+            Assert.AreEqual(CheckCityResult.FoundUnused, _cities.CheckCity("москва"));
+        }
 
     }
 }

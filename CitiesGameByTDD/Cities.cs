@@ -16,13 +16,22 @@
         public IReadOnlyDictionary<char, int> LetterCounters => _letterCounters;
         public char CurrentLetter { get; private set; } = char.MinValue;
 
-        // TODO: дореализвать для случаев FoundUsed и FoundUnused
+        // TODO: дореализовать для FoundUsed
         public CheckCityResult CheckCity(string cityName)
         {
-            if (cityName[0] != CurrentLetter) 
+            var cityNameLow = cityName.Trim().ToLowerInvariant();
+            if (CurrentLetter != char.MinValue && cityName[0] != CurrentLetter) 
             {
                 return CheckCityResult.WrongFirstLetter;
             }
+            var city = _cities.Find(city => city.Name == cityNameLow);
+            if (city != null)
+            {
+                if (!city.IsUsed)
+                {
+                    return CheckCityResult.FoundUnused;
+                }                
+            }       
             return CheckCityResult.NotFound;
         }
 
