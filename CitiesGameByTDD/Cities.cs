@@ -76,7 +76,7 @@
             return true;
         }
 
-        //TODO: дореализовать повторную загрузку городов
+        
         public bool LoadCities()
         {
             if(_cities.Count == 0)
