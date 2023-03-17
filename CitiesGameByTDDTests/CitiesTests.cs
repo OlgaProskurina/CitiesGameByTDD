@@ -84,5 +84,19 @@ namespace CitiesGameByTDD.Tests
             Assert.AreEqual(CheckCityResult.FoundUnused, _cities.CheckCity("москва"));
         }
 
+
+        [TestMethod()]
+        public void AcceptCityTest()
+        {
+            int letterCount;
+            _cities.LoadCities();
+            _cities.FillLetterCountersKeys();
+            _cities.FillLetterCountersValues();
+            letterCount = _cities.LetterCounters['я'];
+
+            _cities.AcceptCity("Ярославль");
+
+            Assert.AreEqual(letterCount - 1, _cities.LetterCounters['я']);
+        }
     }
 }

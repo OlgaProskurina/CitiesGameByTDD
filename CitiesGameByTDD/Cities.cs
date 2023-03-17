@@ -16,6 +16,12 @@
         public IReadOnlyDictionary<char, int> LetterCounters => _letterCounters;
         public char CurrentLetter { get; private set; } = char.MinValue;
 
+        // TODO: дореализовать метод
+        public void AcceptCity(string cityName)
+        {
+            _letterCounters[cityName[0]]--;
+        }
+
         // TODO: дореализовать для FoundUsed
         public CheckCityResult CheckCity(string cityName)
         {
