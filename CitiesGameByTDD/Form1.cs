@@ -29,7 +29,11 @@ namespace CitiesGameByTDD
 
         private void buttonSurrender_Click(object sender, EventArgs e)
         {
-
+            labelMessage.Text = $"Игрок номер {_players.CurrentPlayer} сдается!";
+            timerMove.Stop();
+            _players.ExpelCurrentPlayer();
+            _players.NextPlayer();
+            GameMove();
         }
 
         private void buttonEnterCity_Click(object sender, EventArgs e)
