@@ -50,5 +50,13 @@ namespace CitiesGameByTDD.Tests
             Assert.AreEqual(CheckCityResult.NotFound,
                 _cities.CheckCity("такого города нет"));
         }
+
+        [TestMethod()]
+        public void SetCurrentLetterTest()
+        {
+            _cities.LoadCities();
+            _cities.SetCurrentLetter("астана");
+            Assert.AreEqual('a', _cities.CurrentLetter);
+        }
     }
 }

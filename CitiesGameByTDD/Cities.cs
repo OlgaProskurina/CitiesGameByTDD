@@ -57,5 +57,11 @@
             }             
             return true;
         }
+
+        // TODO: дореализовать метод
+        public void SetCurrentLetter(string cityName)
+        {
+            CurrentLetter = 'a';
+        }
     }
 }
