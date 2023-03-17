@@ -5,11 +5,26 @@ namespace CitiesGameByTDD.Tests
     [TestClass()]
     public class CitiesTests
     {
+        private Cities _cities;
+
+
+        [TestInitialize]
+        public void Init()
+        {
+            _cities = new Cities();
+        }
+
         [TestMethod()]
         public void LoadCitiesTest()
         {
-            var cities = new Cities();           
-            Assert.IsTrue(cities.LoadCities());
+            Assert.IsTrue(_cities.LoadCities());
+        }
+
+        [TestMethod()]
+        public void FillLetterCountersKeysTest() 
+        {
+            _cities.FillLetterCountersKeys();
+            Assert.IsNotNull(_cities.LetterCounters);
         }
     }
 }

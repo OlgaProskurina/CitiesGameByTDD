@@ -1,11 +1,20 @@
-﻿using Accessibility;
-using System.DirectoryServices.ActiveDirectory;
-
-namespace CitiesGameByTDD
+﻿namespace CitiesGameByTDD
 {
     public class Cities
     {
         private List<City> _cities = new List<City>();
+        private Dictionary<char, int> _letterCounters = new Dictionary<char, int>();
+        public IReadOnlyDictionary<char, int> LetterCounters => _letterCounters;
+
+        // Заполняет словарь алфавитом
+        public void FillLetterCountersKeys()
+        {
+            _letterCounters.Clear();
+            for (char i = 'а'; i < 'я' + 1; i++)
+            {
+                _letterCounters.Add(i,0);
+            }
+        }
 
         //TODO: дореализовать повторную загрузку городов
         public bool LoadCities()
