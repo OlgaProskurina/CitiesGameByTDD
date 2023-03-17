@@ -14,11 +14,20 @@
             }            
         }
 
-        // TODO: дореализовать
+        // Возврат: номер следующего игрока
         public int NextPlayer()
         {
-            return 2;
+            if (_currentPalyerIndex < _playersList.Count -1)
+            {
+                _currentPalyerIndex++;
+            }
+            else
+            {
+                _currentPalyerIndex = 0;
+            }
+            return _playersList[_currentPalyerIndex];
         }
+
 
         public void ExpelCurrentPlayer()
         {
