@@ -9,7 +9,7 @@ namespace CitiesGameByTDD.Tests
         public void LoadCitiesTest()
         {
             var cities = new Cities();           
-            Assert.IsFalse(cities.LoadCities());
+            Assert.IsTrue(cities.LoadCities());
         }
     }
 }

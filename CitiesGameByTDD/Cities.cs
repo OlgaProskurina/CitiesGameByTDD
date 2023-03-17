@@ -1,15 +1,23 @@
-﻿namespace CitiesGameByTDD
+﻿using Accessibility;
+using System.DirectoryServices.ActiveDirectory;
+
+namespace CitiesGameByTDD
 {
     public class Cities
     {
-        private List<City> _cities;
+        private List<City> _cities = new List<City>();
 
-        //TODO: дореализовать загрузку списка
+        //TODO: дореализовать повторную загрузку городов
         public bool LoadCities()
         {
-            _cities = new List<City>();
-            if (_cities.Count == 0)
-                return false;
+            if(_cities.Count == 0)
+            {
+               _cities = CitiesGameSQLiteLoader.GetCitiesFormBD();
+               if(_cities.Count == 0 ) 
+               {
+                    return false;
+               }               
+            }             
             return true;
         }
     }
