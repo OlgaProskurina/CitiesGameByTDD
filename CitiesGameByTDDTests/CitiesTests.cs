@@ -34,5 +34,13 @@ namespace CitiesGameByTDD.Tests
             _cities.FillLetterCountersKeys();            
             Assert.IsNotNull(_cities.FillLetterCountersValues());
         }
+
+        [TestMethod()]
+        public void CheckCityTest()
+        {
+            _cities.LoadCities();
+            Assert.AreEqual(CheckCityResult.NotFound, 
+                _cities.CheckCity("такого города нет"));
+        }
     }
 }

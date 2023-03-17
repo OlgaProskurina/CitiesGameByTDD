@@ -1,10 +1,25 @@
 ﻿namespace CitiesGameByTDD
 {
+    public enum CheckCityResult
+    {
+        NotFound,
+        FoundUsed,
+        FoundUnused,
+        WrongFirstLetter
+    }
+
+
     public class Cities
     {
         private List<City> _cities = new List<City>();
         private Dictionary<char, int> _letterCounters = new Dictionary<char, int>();
         public IReadOnlyDictionary<char, int> LetterCounters => _letterCounters;
+
+        // TODO: реализовать метод проверки города
+        public CheckCityResult CheckCity(string cityName)
+        {
+            return CheckCityResult.NotFound;
+        }
 
         // Заполняет словарь алфавитом
         public void FillLetterCountersKeys()
