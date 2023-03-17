@@ -5,7 +5,7 @@ namespace CitiesGameByTDD
     public class CitiesGameSQLiteLoader
     {
         // Возврат: список с городами из tddbd.sqlite
-        public List<City> GetCitiesFormBD()
+        public static List<City> GetCitiesFormBD()
         {
             var cities = new List<City>();
             using (var connection = new SQLiteConnection(@"Data Source=tddbd.sqlite"))

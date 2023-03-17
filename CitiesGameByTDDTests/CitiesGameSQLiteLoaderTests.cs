@@ -8,8 +8,7 @@ namespace CitiesGameByTDD.Tests
         [TestMethod()]
         public void GetCitiesFormBDTest()
         {
-            var loader = new CitiesGameSQLiteLoader();            
-            Assert.AreNotEqual(0, loader.GetCitiesFormBD().Count);
+            Assert.AreNotEqual(0, CitiesGameSQLiteLoader.GetCitiesFormBD().Count);
         }
     }
 }
