@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CitiesGameByTDD;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CitiesGameByTDD.Tests
 {
@@ -21,10 +22,17 @@ namespace CitiesGameByTDD.Tests
         }
 
         [TestMethod()]
-        public void FillLetterCountersKeysTest() 
+        public void FillLetterCountersKeysTest()
         {
             _cities.FillLetterCountersKeys();
             Assert.IsNotNull(_cities.LetterCounters);
+        }
+
+        [TestMethod()]
+        public void FillLetterCountersValuesTest()
+        {
+            _cities.FillLetterCountersKeys();            
+            Assert.IsNotNull(_cities.FillLetterCountersValues());
         }
     }
 }

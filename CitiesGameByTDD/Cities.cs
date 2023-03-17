@@ -16,6 +16,14 @@
             }
         }
 
+        // TODO: реализовать заполнение значений словаря
+        public bool FillLetterCountersValues()
+        {
+           if (_letterCounters.Count == 0)
+                return false;
+           return true;
+        }
+
         //TODO: дореализовать повторную загрузку городов
         public bool LoadCities()
         {
