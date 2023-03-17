@@ -47,7 +47,6 @@
             // 
             // timerMove
             // 
-            timerMove.Interval = 1000;
             timerMove.Tick += timerMove_Tick;
             // 
             // buttonEnterCity
