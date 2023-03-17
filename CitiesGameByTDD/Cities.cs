@@ -68,10 +68,21 @@
             return true;
         }
 
-        // TODO: дореализовать метод
+        
         public void SetCurrentLetter(string cityName)
         {
-            CurrentLetter = 'a';
+            int letterIndex = cityName.Length - 1;
+            // если городов на эту букву больше нет
+            while (0 == _letterCounters[cityName[letterIndex]])
+            {
+                letterIndex--;
+                if (letterIndex < 0) // на любую букву cityName не осталось городов
+                {
+                    CurrentLetter = char.MaxValue;
+                    break;
+                }
+            }
+            CurrentLetter = cityName[letterIndex];
         }
     }
 }

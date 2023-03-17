@@ -54,9 +54,28 @@ namespace CitiesGameByTDD.Tests
         [TestMethod()]
         public void SetCurrentLetterTest()
         {
-            _cities.LoadCities();        
+            _cities.LoadCities();
+            _cities.FillLetterCountersKeys();
+            _cities.FillLetterCountersValues();
+
             _cities.SetCurrentLetter("астана");
+            
             Assert.AreEqual('a', _cities.CurrentLetter);
         }
+
+        [TestMethod()]
+        public void SetCurrentLetterTest2()
+        {
+            _cities.LoadCities();
+            _cities.FillLetterCountersKeys();
+            _cities.FillLetterCountersValues();
+
+            _cities.SetCurrentLetter("ярославль");
+
+            Assert.AreEqual('л', _cities.CurrentLetter);
+        }
+
+
+
     }
 }
